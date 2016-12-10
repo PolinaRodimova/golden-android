@@ -12,6 +12,10 @@
             android:icon="@drawable/ic_megaphone"
             android:title="Сегодня в клубе" />
         <item
+            android:id="@+id/nav_mygirls"
+            android:icon="@drawable/ic_profile"
+            android:title="Мои девочки" />
+        <item
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_history"
             android:title="Моя история" />

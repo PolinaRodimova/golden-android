@@ -21,6 +21,6 @@ public interface ApiService {
     @POST("/action/{action}/{login}")
     Call<Integer> registerAction(@Path("action") String action, @Path("login") String login);
 
-    @GET("/history//{login}")
+    @GET("/history/{login}")
     Call<List<HistoryAction>> getHistory(@Path("login") String login);
 }

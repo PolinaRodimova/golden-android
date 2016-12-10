@@ -1,6 +1,6 @@
 package goldengirls.strip.vlasenko.goldengirls;
 
-import android.content.Context;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,22 +12,19 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import goldengirls.strip.vlasenko.goldengirls.model.GirlsInfo;
+import goldengirls.strip.vlasenko.goldengirls.model.HistoryAction;
 
 import static goldengirls.strip.vlasenko.goldengirls.StaticProperties.CONTEXT;
 
-
-public class ClubFragment extends Fragment {
-    public ClubFragment() {
+public class MyGirlsFragment  extends Fragment {
+    public MyGirlsFragment() {
         // Required empty public constructor
     }
 
@@ -35,18 +32,16 @@ public class ClubFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_clubs, container, false);
-        ((ImageView) view.findViewById(R.id.club_news)).setImageResource(R.drawable.action_today);
-        GridView girlsGrid = new GridView(getContext());
-        girlsGrid.setNumColumns(2);
+        GridView view = new GridView(getContext());
+        view.setNumColumns(2);
         List<GirlsInfo> list = getGirls();
         ArrayAdapter<GirlsInfo> adapter = new GirlsArrayAdapter(
                 getResources().getColor(R.color.colorAccent2),
                 getActivity(),
                 getActivity().getBaseContext(),
                 list.toArray(new GirlsInfo[list.size()]));
-        girlsGrid.setAdapter(adapter);
-        ((LinearLayout)view.findViewById(R.id.girls_club)).addView(girlsGrid);
+        view.setAdapter(adapter);
+
         return view;
     }
 

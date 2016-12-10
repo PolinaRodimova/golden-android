@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
+    android:id="@+id/girl22_block"
+    android:layout_width="150dp"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/girl_img"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="4dp">
-    </ImageView>
+        android:layout_marginTop="4dp"
+        android:src="@drawable/alisa"
+        android:tag="img4" />
 
     <TextView
-        android:id="@+id/girl_name"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="50dp" >
-    </TextView>
+        android:gravity="center_horizontal"
+        android:id="@+id/girl_text"
+        android:text="Алиса" />
 
     <Button
         android:id="@+id/girl_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="50dp" >
-    </Button>
-
-
+        android:layout_weight="14.06"
+        android:tag="button4"
+        android:text="Подмигнуть"
+        android:textStyle="bold" />
 </LinearLayout>

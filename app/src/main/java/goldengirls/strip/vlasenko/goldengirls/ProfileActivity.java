@@ -104,6 +104,10 @@ public class ProfileActivity extends AppCompatActivity
                 fragment = new ClubFragment();
                 title = "Сегодня в клубе";
                 break;
+            case R.id.nav_mygirls:
+                fragment = new  MyGirlsFragment();
+                title = "Мои девочки";
+                break;
             case R.id.nav_history:
                 fragment = new HistoryFragment();
                 title = "Моя история";

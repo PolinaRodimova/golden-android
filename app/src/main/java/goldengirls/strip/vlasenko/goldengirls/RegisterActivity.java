@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
                         String phone = mPhoneView.getText().toString();
                         String name = mNameView.getText().toString();
                         String password = mPasswordView.getText().toString();
-                        User user = new User(phone, name, password);
+                        User user = new User(Long.parseLong(phone), name, password);
                         CONTEXT.setUser(user);
                         try {
                             ApiService apiService = HTTP_CLIENT.create(ApiService.class);

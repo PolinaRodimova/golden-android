@@ -54,7 +54,6 @@
                     android:id="@+id/girl_p_button1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
                     android:layout_weight="14.06"
                     android:tag="button4"
                     android:text="Подмигнуть"

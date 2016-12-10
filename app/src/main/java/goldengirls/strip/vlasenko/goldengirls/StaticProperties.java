@@ -22,7 +22,7 @@ public class StaticProperties {
 
     public final static Gson GSON = new Gson();
     public final static GoldContext CONTEXT = new GoldContext();
-    public final static String SERVER_PATH = "http://ya.ru";
+    public final static String SERVER_PATH = "http://138.68.91.70:8080";//http://mygirls.olhovsky.me:8080";
     public final static OkHttpClient okHttpClient = new OkHttpClient.Builder()
             .readTimeout(5, TimeUnit.SECONDS)
             .connectTimeout(5, TimeUnit.SECONDS)
