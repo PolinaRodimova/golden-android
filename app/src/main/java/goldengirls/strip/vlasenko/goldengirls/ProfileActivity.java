@@ -103,7 +103,11 @@ public class ProfileActivity extends AppCompatActivity
                 break;
             case R.id.nav_history:
                 fragment = new HistoryFragment();
-                title = "My History";
+                title = "Моя история";
+                break;
+            case R.id.nav_quests:
+                fragment = new QuestFragment();
+                title = "Задания";
                 break;
             case R.id.nav_qrcode:
                 fragment = new QrCodeFragment();

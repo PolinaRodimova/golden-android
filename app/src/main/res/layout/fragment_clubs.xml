@@ -1,13 +1,187 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/club_today_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="goldengirls.strip.vlasenko.goldengirls.ClubFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:id="@+id/register_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TableRow android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/club_news"
+                    android:layout_width="350dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/action_today" />
+            </TableRow>
+
+            <TableRow android:padding="5dp">
+
+                <LinearLayout
+                    android:id="@+id/club_girl11"
+                    android:layout_width="150dp"
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/girl11_block"
+                        android:layout_width="150dp"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:tag="11">
+
+                        <ImageView
+                            android:id="@+id/girl11_img"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="4dp"
+                            android:src="@drawable/melani"
+                            android:tag="img1" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:tag="text1"
+                            android:text="Мелани" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="14.06"
+                            android:tag="button1"
+                            android:text="Подмигнуть"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/girl12_block"
+                        android:layout_width="150dp"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:tag="12">
+
+                        <ImageView
+                            android:id="@+id/girl12_img"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="4dp"
+                            android:src="@drawable/monik"
+                            android:tag="img2" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:tag="text2"
+                            android:text="Моник" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="14.06"
+                            android:tag="button2"
+                            android:text="Подмигнуть"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow android:padding="5dp">
+
+                <LinearLayout
+                    android:id="@+id/club_girl21"
+                    android:layout_width="150dp"
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:tag="21">
+
+                    <LinearLayout
+                        android:id="@+id/girl21_block"
+                        android:layout_width="150dp"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/girl21_img"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="4dp"
+                            android:src="@drawable/sasha"
+                            android:tag="img3" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:tag="text3"
+                            android:text="Саша" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="14.06"
+                            android:tag="button3"
+                            android:text="Подмигнуть"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/girl22_block"
+                        android:layout_width="150dp"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/girl22_img"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="4dp"
+                            android:src="@drawable/alisa"
+                            android:tag="img4" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:tag="text4"
+                            android:text="Алиса" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="14.06"
+                            android:tag="button4"
+                            android:text="Подмигнуть"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
 </FrameLayout>

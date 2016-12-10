@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/quest_block"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <RelativeLayout
+        android:id="@+id/relative_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/quest_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="4dp" />
+
+        <ProgressBar
+            android:id="@+id/quest_progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible"/>
+
+    </RelativeLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/quest_name"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/quest_description"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:textSize="10dp" />
+    </LinearLayout>
+</LinearLayout>
