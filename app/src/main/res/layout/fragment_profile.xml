@@ -58,7 +58,53 @@
             <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/archieves"
                 android:layout_width="fill_parent"
-                android:layout_height="200dp"></TableLayout>
+                android:layout_height="200dp">
+
+                <TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/archieve_row"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/archievel1"
+                            android:orientation="vertical"
+                            android:layout_height="150dp"
+                            android:layout_width="100dp"
+                            android:layout_margin="5dp">
+
+                            <ImageView
+                                android:id="@+id/archievei1"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp" />
+
+                            <TextView
+                                android:id="@+id/archivet1"
+                                android:layout_width="100dp"
+                                android:layout_height="50dp"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/archievel2"
+                            android:orientation="vertical"
+                            android:layout_height="150dp"
+                            android:layout_width="100dp"
+                            android:layout_margin="5dp">
+
+                            <ImageView
+                                android:id="@+id/archievei2"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp" />
+                            <TextView
+                                android:id="@+id/archivet2"
+                                android:layout_width="100dp"
+                                android:layout_height="50dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
 
         </TableRow>
     </TableLayout>

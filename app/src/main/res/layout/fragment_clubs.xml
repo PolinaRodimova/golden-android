@@ -170,7 +170,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
                             android:tag="text4"
-                            android:text="Алиса" />
+                            android:text="Алиса"
+                            />
 
                         <Button
                             android:layout_width="match_parent"

@@ -33,8 +33,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String loginStr = login.getText().toString();
                 String pwdStr = password.getText().toString();
-                User user = new User(loginStr, "emptyName", pwdStr);
-                user.setStatus("unknown");
+                User user = new User(loginStr, "Илюха", pwdStr);
+                user.setStatus("новичок");
+                CONTEXT.setUser(user);
+                Intent intent3 = new Intent(MainActivity.this, ProfileActivity.class);
+                intent3.setAction(Intent.ACTION_VIEW);
+                startActivity(intent3);
+                if (true) return;
                 try {
                     ApiService apiService = HTTP_CLIENT.create(ApiService.class);
                     Call<User> call = apiService.saveUser(user);

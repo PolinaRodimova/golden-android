@@ -15,6 +15,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import static goldengirls.strip.vlasenko.goldengirls.StaticProperties.CONTEXT;
+
 
 public class ProfileActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -44,6 +46,7 @@ public class ProfileActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         displayView(R.id.nav_profile);
+
     }
 
     @Override
@@ -109,15 +112,24 @@ public class ProfileActivity extends AppCompatActivity
                 fragment = new QuestFragment();
                 title = "Задания";
                 break;
-            case R.id.nav_qrcode:
-                fragment = new QrCodeFragment();
-                title = "QR Code";
-                break;
             case R.id.nav_scan_qrcode:
                 fragment = new QrCodeScannerFragment();
                 title = "QR Сканер";
                 break;
 
+            case R.id.nav_qrcode:
+                fragment = new QrCodeFragment();
+                title = "QR Code";
+                break;
+            case R.id.nav_balance:
+                fragment = new BalanceFragment();
+                title = "Пополнить баланс";
+                break;
+
+            case R.id.girl_profile:
+                fragment = new GirlProfileFragment();
+                title = CONTEXT.getGirl().getName();
+                break;
         }
 
         if (fragment != null) {

@@ -30,7 +30,6 @@ public class GirlsArrayAdapter extends ArrayAdapter<GirlsInfo> {
         View rowView = inflater.inflate(R.layout.one_girl_view, parent, false);
         ((ImageView) rowView.findViewById(R.id.girl_img)).setImageResource(R.drawable.ic_menu_share);
         ((TextView) rowView.findViewById(R.id.girl_name)).setText(girlsInfo.getName());
-        ((TextView) rowView.findViewById(R.id.girl_rating)).setText(girlsInfo.getRating());
         final View girlButton = rowView.findViewById(R.id.girl_button);
         girlButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,5 +1,6 @@
 package goldengirls.strip.vlasenko.goldengirls;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -21,6 +22,8 @@ import java.util.List;
 
 import goldengirls.strip.vlasenko.goldengirls.model.GirlsInfo;
 
+import static goldengirls.strip.vlasenko.goldengirls.StaticProperties.CONTEXT;
+
 
 public class ClubFragment extends Fragment {
     public ClubFragment() {
@@ -35,13 +38,20 @@ public class ClubFragment extends Fragment {
 
         ((ImageView) view.findViewById(R.id.club_news)).setImageResource(R.drawable.action_today);
 
-        List<GirlsInfo> girls = getGirls();
+        final List<GirlsInfo> girls = getGirls();
         int i = 1;
-        for (GirlsInfo info : girls) {
+        for (final GirlsInfo info : girls) {
             ImageView imgG = (ImageView) view.findViewWithTag("img" + i);
             TextView textView = (TextView) view.findViewWithTag("text" + i);
 
-            imgG.setImageResource(getGirlImg(info.getName()));
+            imgG.setImageResource(info.getDrawable());
+            imgG.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    CONTEXT.setGirl(info);
+                    ((ProfileActivity)getActivity()).displayView(R.id.girl_profile);
+                }
+            });
             textView.setText(info.getName());
             Button likeButton = (Button) view.findViewWithTag("button" + i);
             likeButton.setOnClickListener(
@@ -58,22 +68,10 @@ public class ClubFragment extends Fragment {
         return view;
     }
 
-    private int getGirlImg(String name) {
-        if ("саша".equalsIgnoreCase(name)) {
-            return R.drawable.sasha;
-        } else if ("моник".equalsIgnoreCase(name)) {
-            return R.drawable.monik;
-        } else if ("мелани".equalsIgnoreCase(name)) {
-            return R.drawable.melani;
-        } else if ("алиса".equalsIgnoreCase(name)) {
-            return R.drawable.alisa;
-        }
-        return R.drawable.alisa;
-
-    }
-
     private List<GirlsInfo> getGirls() {
-        return Arrays.asList(new GirlsInfo("Мелани", "rate1"), new GirlsInfo("Моник", "rate2"),
-                new GirlsInfo("Саша", "rate2"),new GirlsInfo("Алиса", "rate2"));
+        return Arrays.asList(new GirlsInfo("Мелани", "Утонченая красотка", R.drawable.melani),
+                new GirlsInfo("Моник", "Прекрасно двигается и восхитительно поет", R.drawable.monik),
+                new GirlsInfo("Саша", "Изящное создание с точеной фигуркой статуэтки", R.drawable.sasha),
+                new GirlsInfo("Алиса", "За нордической сдержанностью Алисы скрывается бешеный сибирский темперамент, а ее прикосновение пьянит, как молодое вино.", R.drawable.alisa));
     }
 }

@@ -39,38 +39,38 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        ((ImageView) view.findViewById(R.id.userAvatar)).setImageResource(R.drawable.ic_menu_camera);
+        ((ImageView) view.findViewById(R.id.userAvatar)).setImageResource(R.drawable.profile_img);
         ((TextView) view.findViewById(R.id.userName)).setText(CONTEXT.getUser().getName());
         ((TextView) view.findViewById(R.id.userStatus)).setText(CONTEXT.getUser().getStatus());
         int balance = CONTEXT.getUser().getBalance();
-        ((TextView) view.findViewById(R.id.userBalance)).setText(balance + " Lucky bonuses");
+        ((TextView) view.findViewById(R.id.userBalance)).setText(balance + " Lucky Money");
 
-        TableLayout archievesLayout = (TableLayout) view.findViewById(R.id.archieves);
+        LinearLayout archievesLayout = (LinearLayout) view.findViewById(R.id.archieve_row);
 
         List<ArchieveInfo> archieves = getArchieves();
-        TableRow currentRow = new TableRow(getContext());
-        int counter = 1;
-        for (ArchieveInfo info : archieves) {
-            if (counter == 3) {
-                archievesLayout.addView(currentRow);
-                currentRow = new TableRow(getContext());
-            }
-            LinearLayout layout = new LinearLayout(getContext());
-            layout.setOrientation(LinearLayout.VERTICAL);
-            currentRow.addView(layout);
-            ImageView gImg = new ImageView(getContext());
-            gImg.setImageResource(R.drawable.ic_menu_camera);
-            layout.addView(gImg);
-            TextView name = new TextView(getContext());
-            name.setText(info.getName());
-            layout.addView(name);
-            counter++;
+        ((ImageView)view.findViewById(R.id.archievei1)).setImageResource(R.drawable.alco);
+        ((TextView)view.findViewById(R.id.archivet1)).setText("Алкомастер");
 
-        }
-        archievesLayout.addView(currentRow);
+        ((ImageView)view.findViewById(R.id.archievei2)).setImageResource(R.drawable.circle);
+        ((TextView)view.findViewById(R.id.archivet2)).setText("Профи по приватам");
 
         return view;
     }
+
+//    private void addArchieve(ArchieveInfo info, LinearLayout archievesLayout){
+//        LinearLayout layout = new LinearLayout(getContext());
+//        layout.setOrientation(LinearLayout.VERTICAL);
+//        ImageView gImg = new ImageView(getContext());
+//        gImg.setAdjustViewBounds(true);
+//        gImg.setMaxHeight(200);
+//        gImg.setMinimumHeight(200);
+//        gImg.setImageResource(info.getId());
+//        layout.addView(gImg);
+//        TextView name = new TextView(getContext());
+//        name.setText(info.getName());
+//        layout.addView(name);
+//        archievesLayout.addView(layout);
+//    }
 
     private List<ArchieveInfo> getArchieves()  {
         try {
@@ -86,8 +86,8 @@ public class ProfileFragment extends Fragment {
         } catch (Exception e) {
             AlertView.showError(getActivity());
         }
-        return Arrays.asList(new ArchieveInfo(1, "ачивка1", "описание"),
-                new ArchieveInfo(1, "ачивка2", "описание"));
+        return Arrays.asList(new ArchieveInfo(R.drawable.circle, "Профи по приватам", "описание"),
+                new ArchieveInfo(R.drawable.alco, "Алкомастер", "описание"));
     }
 
 }

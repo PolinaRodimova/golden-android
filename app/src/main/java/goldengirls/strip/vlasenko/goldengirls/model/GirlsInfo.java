@@ -1,21 +1,26 @@
 package goldengirls.strip.vlasenko.goldengirls.model;
 
 
-
 public class GirlsInfo {
     private String name;
-    private String rating;
+    private String description;
+    private int drawable;
 
-    public GirlsInfo(String name, String rating) {
+    public GirlsInfo(String name, String description, int drawable) {
         this.name = name;
-        this.rating = rating;
+        this.description = description;
+        this.drawable = drawable;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getRating() {
-        return rating;
+    public String getDescription() {
+        return description;
+    }
+
+    public int getDrawable() {
+        return drawable;
     }
 }
