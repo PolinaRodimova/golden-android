@@ -53,7 +53,7 @@ public class QrCodeScannerActivity extends Activity {
     private void sendUserActivity(String userPhone, ActionType action) {
         try {
             ApiService apiService = HTTP_CLIENT.create(ApiService.class);
-            HistoryAction actionAPI = new HistoryAction(CONTEXT.getUser().getId(), action.getText(),
+            HistoryAction actionAPI = new HistoryAction(Long.parseLong(userPhone), action.getText(),
                     action.getType());
             Call<Integer> call = apiService.registerAction(actionAPI);
             Response<Integer> response = call.execute();

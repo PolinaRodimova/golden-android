@@ -34,7 +34,7 @@ public class User implements Serializable {
     }
 
     public String getStatus() {
-        return status == null ? "новичок" : status;
+        return "уверенный пользователь";
     }
 
     public void setStatus(String status) {

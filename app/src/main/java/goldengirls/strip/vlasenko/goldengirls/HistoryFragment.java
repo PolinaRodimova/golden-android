@@ -52,13 +52,13 @@ public class HistoryFragment extends Fragment {
             Call<List<HistoryAction>> call = apiService.getHistory(CONTEXT.getUser().getPhone());
             Response<List<HistoryAction>> response = call.execute();
 
-            if (response.code() == HttpURLConnection.HTTP_OK) {
+            if (response.code() == HttpURLConnection.HTTP_OK && !response.body().isEmpty()) {
                 return response.body();
             }
         } catch (Exception e) {
         }
         return Arrays.asList(
-                new HistoryAction(id, "Привет с очаровательной Мелани", ActionType.DANCE.getType()),
+                new HistoryAction(id, "Приват с Мелани", ActionType.DANCE.getType()),
                 new HistoryAction(id, ActionType.BAR.getText(), ActionType.BAR.getType()),
                 new HistoryAction(id, ActionType.BAR.getText(), ActionType.BAR.getType()),
                 new HistoryAction(id, ActionType.BAR.getText(), ActionType.BAR.getType()),
