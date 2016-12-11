@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final EditText login = (EditText) findViewById(R.id.loginText);
-        final EditText password = (EditText) findViewById(R.id.passwordText);
+        //final EditText password = (EditText) findViewById(R.id.passwordText);
 
         Button buttonSign = (Button) findViewById(R.id.buttonSign);
         buttonSign.setOnClickListener(new View.OnClickListener() {
@@ -36,22 +36,23 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 String loginStr = login.getText().toString();
-                String pwdStr = password.getText().toString();
-                User user = new User(Long.parseLong(loginStr), "Илья", pwdStr);
+               // String pwdStr = password.getText().toString();
+                User user = new User(Long.parseLong(loginStr), "Илюха", "pwdStr");
                 user.setStatus("новичок");
                 user.setBalance(20000);
-                try {
-                    ApiService apiService = HTTP_CLIENT.create(ApiService.class);
-                    Call<User> call = apiService.getUser(loginStr);
-                    Response<User> response = call.execute();
-                    if (response.code() == HttpURLConnection.HTTP_OK) {
-                        CONTEXT.setUser(response.body());
-                    } else {
-                        CONTEXT.setUser(user);
-                    }
-                } catch (Exception e) {
-                    CONTEXT.setUser(user);
-                }
+                CONTEXT.setUser(user);
+//                try {
+//                    ApiService apiService = HTTP_CLIENT.create(ApiService.class);
+//                    Call<User> call = apiService.getUser(loginStr);
+//                    Response<User> response = call.execute();
+//                    if (response.code() == HttpURLConnection.HTTP_OK) {
+//                        CONTEXT.setUser(response.body());
+//                    } else {
+//                        CONTEXT.setUser(user);
+//                    }
+//                } catch (Exception e) {
+//                    CONTEXT.setUser(user);
+//                }
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                 intent.setAction(Intent.ACTION_VIEW);
                 startActivity(intent);

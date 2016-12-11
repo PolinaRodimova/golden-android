@@ -47,7 +47,8 @@
                     <TextView
                         android:id="@+id/userBalance"
                         android:layout_width="fill_parent"
-                        android:layout_height="50dp" />
+                        android:layout_height="50dp"
+                        android:textSize="20sp"/>
 
                 </LinearLayout>
             </LinearLayout>

@@ -83,18 +83,18 @@ public class GirlProfileFragment extends Fragment {
     }
 
     private boolean sendAction() {
-        try {
-            ApiService apiService = HTTP_CLIENT.create(ApiService.class);
-            HistoryAction action = new HistoryAction(CONTEXT.getUser().getId(), "Приват с очаровательной " + CONTEXT.getGirl().getName(),
-                    ActionType.DANCE.getType());
-            Call<Integer> call = apiService.registerAction(action);
-            Response<Integer> response = call.execute();
-            if (response.code() == HttpURLConnection.HTTP_OK) {
-                AlertView.showSuccess(getContext());
-                return true;
-            }
-        } catch (Exception e) {
-        }
+//        try {
+//            ApiService apiService = HTTP_CLIENT.create(ApiService.class);
+//            HistoryAction action = new HistoryAction(CONTEXT.getUser().getId(), "Приват с очаровательной " + CONTEXT.getGirl().getName(),
+//                    ActionType.DANCE.getType());
+//            Call<Integer> call = apiService.registerAction(action);
+//            Response<Integer> response = call.execute();
+//            if (response.code() == HttpURLConnection.HTTP_OK) {
+//                AlertView.showSuccess(getContext());
+//                return true;
+//            }
+//        } catch (Exception e) {
+//        }
         AlertView.showMessage(getContext(), "Действие выполнено", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

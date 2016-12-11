@@ -6,7 +6,7 @@ public class HistoryAction {
     private Long girlId;
     private String text;
     private int type;
-    private String time = "18-10-2016";
+    private String time = "11-12-2016";
 
     public HistoryAction(long userId, String text, int type) {
         this.userId = userId;

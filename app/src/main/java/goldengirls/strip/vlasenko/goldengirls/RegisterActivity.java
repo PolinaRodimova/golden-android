@@ -30,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         mPhoneView = (EditText) findViewById(R.id.reg_phone);
         mNameView = (EditText) findViewById(R.id.reg_name);
-        mPasswordView = (EditText) findViewById(R.id.reg_password);
+//        mPasswordView = (EditText) findViewById(R.id.reg_password);
 
         Button registerButton = (Button) findViewById(R.id.reg_button);
         registerButton.setOnClickListener(
@@ -39,8 +39,8 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         String phone = mPhoneView.getText().toString();
                         String name = mNameView.getText().toString();
-                        String password = mPasswordView.getText().toString();
-                        User user = new User(Long.parseLong(phone), name, password);
+//                        String password = mPasswordView.getText().toString();
+                        User user = new User(Long.parseLong(phone), name, "password");
                         user.setBalance(20000);
                         CONTEXT.setUser(user);
                         try {

@@ -7,13 +7,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
         android:id="@+id/wifeText" />
 
     <Button
-        android:text="Button"
+        android:text="Сохранить"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/wifeButton" />
+        android:id="@+id/wifeButton"
+        />
 </LinearLayout>
