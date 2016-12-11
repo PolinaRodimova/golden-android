@@ -10,6 +10,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ApiService {
     @POST("/user")
@@ -18,9 +19,9 @@ public interface ApiService {
     @GET("/user/{login}")
     Call<User> getUser(@Path("login")  String login);
 
-    @POST("/action/{action}/{login}")
-    Call<Integer> registerAction(@Path("action") String action, @Path("login") String login);
+    @POST("/action")
+    Call<Integer> registerAction(@Body HistoryAction action);
 
-    @GET("/history/{login}")
-    Call<List<HistoryAction>> getHistory(@Path("login") String login);
+    @GET("/action/")
+    Call<List<HistoryAction>> getHistory(@Query("user") String login);
 }

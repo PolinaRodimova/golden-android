@@ -15,6 +15,7 @@ import com.google.zxing.integration.android.IntentResult;
 import java.net.HttpURLConnection;
 import java.util.Arrays;
 
+import goldengirls.strip.vlasenko.goldengirls.model.HistoryAction;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -38,7 +39,7 @@ public class QrCodeScannerActivity extends Activity {
                 AlertView.showError(getBaseContext());
             } else {
                 String userPhone = result.getContents();
-                String action = CONTEXT.getAction();
+                ActionType action = CONTEXT.getAction();
                 sendUserActivity(userPhone, action);
             }
         } else {
@@ -49,10 +50,12 @@ public class QrCodeScannerActivity extends Activity {
         startActivity(intent);
     }
 
-    private void sendUserActivity(String userPhone, String action) {
+    private void sendUserActivity(String userPhone, ActionType action) {
         try {
             ApiService apiService = HTTP_CLIENT.create(ApiService.class);
-            Call<Integer> call = apiService.registerAction(action, userPhone);
+            HistoryAction actionAPI = new HistoryAction(CONTEXT.getUser().getId(), action.getText(),
+                    action.getType());
+            Call<Integer> call = apiService.registerAction(actionAPI);
             Response<Integer> response = call.execute();
 
             if (response.code() == HttpURLConnection.HTTP_OK) {

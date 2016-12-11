@@ -45,7 +45,8 @@ public class HistoryFragment extends Fragment {
         return ll;
     }
 
-    private List<HistoryAction> getHistory()  {
+    private List<HistoryAction> getHistory() {
+        long id = CONTEXT.getUser().getId();
         try {
             ApiService apiService = HTTP_CLIENT.create(ApiService.class);
             Call<List<HistoryAction>> call = apiService.getHistory(CONTEXT.getUser().getPhone());
@@ -53,13 +54,15 @@ public class HistoryFragment extends Fragment {
 
             if (response.code() == HttpURLConnection.HTTP_OK) {
                 return response.body();
-            } else {
-                AlertView.showError(getActivity());
             }
         } catch (Exception e) {
-            AlertView.showError(getActivity());
         }
-        return Arrays.asList(new HistoryAction("test1", "img1"), new HistoryAction("test2", "img2"));
+        return Arrays.asList(
+                new HistoryAction(id, "Привет с очаровательной Мелани", ActionType.DANCE.getType()),
+                new HistoryAction(id, ActionType.BAR.getText(), ActionType.BAR.getType()),
+                new HistoryAction(id, ActionType.BAR.getText(), ActionType.BAR.getType()),
+                new HistoryAction(id, ActionType.BAR.getText(), ActionType.BAR.getType()),
+                new HistoryAction(id, ActionType.ENTRY.getText(), ActionType.ENTRY.getType()));
     }
 
 }

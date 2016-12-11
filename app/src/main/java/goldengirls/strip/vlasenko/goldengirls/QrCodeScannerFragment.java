@@ -31,7 +31,7 @@ public class QrCodeScannerFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String action = spinner.getSelectedItem().toString();
-                CONTEXT.setAction(action);
+                CONTEXT.setAction(ActionType.valueOf(action));
                 Intent intent = new Intent(getActivity(), QrCodeScannerActivity.class);
                 intent.setAction(Intent.ACTION_VIEW);
                 startActivity(intent);

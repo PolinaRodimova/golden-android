@@ -116,6 +116,10 @@ public class ProfileActivity extends AppCompatActivity
                 fragment = new QuestFragment();
                 title = "Задания";
                 break;
+            case R.id.nav_wife:
+                fragment = new WifeFragment();
+                title = "Защита от жены";
+                break;
             case R.id.nav_scan_qrcode:
                 fragment = new QrCodeScannerFragment();
                 title = "QR Сканер";

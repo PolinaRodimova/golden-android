@@ -6,8 +6,9 @@ import goldengirls.strip.vlasenko.goldengirls.model.User;
 public class GoldContext {
     private long userId;
     private User user;
-    private String action;
+    private ActionType action;
     private GirlsInfo girl;
+    private String wife;
 
     public long getUserId() {
         return userId;
@@ -25,11 +26,11 @@ public class GoldContext {
         this.user = user;
     }
 
-    public String getAction() {
+    public ActionType getAction() {
         return action;
     }
 
-    public void setAction(String action) {
+    public void setAction(ActionType action) {
         this.action = action;
     }
 
@@ -39,5 +40,13 @@ public class GoldContext {
 
     public void setGirl(GirlsInfo girl) {
         this.girl = girl;
+    }
+
+    public String getWife() {
+        return wife;
+    }
+
+    public void setWife(String wife) {
+        this.wife = wife;
     }
 }

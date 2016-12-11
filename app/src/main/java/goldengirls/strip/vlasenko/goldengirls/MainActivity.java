@@ -31,35 +31,32 @@ public class MainActivity extends AppCompatActivity {
         buttonSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (CONTEXT.getWife() != null) {
+                    AlertView.showError(MainActivity.this);
+                    return;
+                }
                 String loginStr = login.getText().toString();
                 String pwdStr = password.getText().toString();
-                User user = new User(Long.parseLong(loginStr), "Илюха", pwdStr);
+                User user = new User(Long.parseLong(loginStr), "Илья", pwdStr);
                 user.setStatus("новичок");
+                user.setBalance(20000);
                 try {
                     ApiService apiService = HTTP_CLIENT.create(ApiService.class);
                     Call<User> call = apiService.getUser(loginStr);
                     Response<User> response = call.execute();
-
                     if (response.code() == HttpURLConnection.HTTP_OK) {
                         CONTEXT.setUser(response.body());
-                        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                        intent.setAction(Intent.ACTION_VIEW);
-                        startActivity(intent);
                     } else {
-                        AlertView.showError(MainActivity.this);
                         CONTEXT.setUser(user);
-                        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                        intent.setAction(Intent.ACTION_VIEW);
-                        startActivity(intent);
                     }
                 } catch (Exception e) {
-                    AlertView.showError(MainActivity.this);
                     CONTEXT.setUser(user);
-                    Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                    intent.setAction(Intent.ACTION_VIEW);
                 }
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                intent.setAction(Intent.ACTION_VIEW);
+                startActivity(intent);
 
-                }
+            }
         });
         Button buttonRegister = (Button) findViewById(R.id.buttonRegister);
         buttonRegister.setOnClickListener(new View.OnClickListener() {

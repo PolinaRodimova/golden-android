@@ -46,7 +46,11 @@ public class GirlsArrayAdapter extends ArrayAdapter<GirlsInfo> {
             }
         });
         TextView textView = (TextView) rowView.findViewById(R.id.girl_text);
-        textView.setText(info.getName());
+        String text = info.getName();
+        if (info.isOnline()){
+            text = text + " (сегодня в клубе!)";
+        }
+        textView.setText(text);
         Button likeButton = (Button) rowView.findViewById(R.id.girl_button);
         likeButton.setOnClickListener(
                 new View.OnClickListener() {

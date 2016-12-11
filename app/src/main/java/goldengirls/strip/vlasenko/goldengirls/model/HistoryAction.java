@@ -2,21 +2,24 @@ package goldengirls.strip.vlasenko.goldengirls.model;
 
 
 public class HistoryAction {
+    private long userId;
+    private Long girlId;
     private String text;
-    private String img;
+    private int type;
     private String time = "18-10-2016";
 
-    public HistoryAction(String text, String img) {
+    public HistoryAction(long userId, String text, int type) {
+        this.userId = userId;
         this.text = text;
-        this.img = img;
+        this.type = type;
     }
 
     public String getText() {
         return text;
     }
 
-    public String getImg() {
-        return img;
+    public int getType() {
+        return type;
     }
 
     public String getTime() {

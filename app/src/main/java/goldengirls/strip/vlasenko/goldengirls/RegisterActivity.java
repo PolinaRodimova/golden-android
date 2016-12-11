@@ -41,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
                         String name = mNameView.getText().toString();
                         String password = mPasswordView.getText().toString();
                         User user = new User(Long.parseLong(phone), name, password);
+                        user.setBalance(20000);
                         CONTEXT.setUser(user);
                         try {
                             ApiService apiService = HTTP_CLIENT.create(ApiService.class);

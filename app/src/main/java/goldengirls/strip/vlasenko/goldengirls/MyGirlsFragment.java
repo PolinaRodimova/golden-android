@@ -46,9 +46,11 @@ public class MyGirlsFragment  extends Fragment {
     }
 
     private List<GirlsInfo> getGirls() {
-        return Arrays.asList(new GirlsInfo("Мелани", "Утонченая красотка", R.drawable.melani),
-                new GirlsInfo("Моник", "Прекрасно двигается и восхитительно поет", R.drawable.monik),
-                new GirlsInfo("Саша", "Изящное создание с точеной фигуркой статуэтки", R.drawable.sasha),
-                new GirlsInfo("Алиса", "За нордической сдержанностью Алисы скрывается бешеный сибирский темперамент, а ее прикосновение пьянит, как молодое вино.", R.drawable.alisa));
+        return Arrays.asList(new GirlsInfo("Мелани", "Утонченая красотка", R.drawable.melani, true),
+                new GirlsInfo("Алиса", "За нордической сдержанностью Алисы скрывается бешеный сибирский темперамент, а ее прикосновение пьянит, как молодое вино.", R.drawable.alisa, true),
+                new GirlsInfo("Николь", "Неукротимая, как ветер и ласковая, как ручной зверек", R.drawable.nikol,  false),
+                new GirlsInfo("Полночь", "Девчонка из соседнего двора, дерзкая и шаловливая, но одновременно женственная и чувственная.", R.drawable.polnch,  false),
+                new GirlsInfo("Хлоя", "Изящное создание с точеной фигуркой статуэтки, модельной внешностью и шальным блеском в глазах\n", R.drawable.hloya,  false)
+                );
     }
 }

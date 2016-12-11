@@ -47,7 +47,7 @@ public class ProfileFragment extends Fragment {
 
         LinearLayout archievesLayout = (LinearLayout) view.findViewById(R.id.archieve_row);
 
-        List<ArchieveInfo> archieves = getArchieves();
+        //List<ArchieveInfo> archieves = getArchieves();
         ((ImageView)view.findViewById(R.id.archievei1)).setImageResource(R.drawable.alco);
         ((TextView)view.findViewById(R.id.archivet1)).setText("Алкомастер");
 
@@ -57,20 +57,6 @@ public class ProfileFragment extends Fragment {
         return view;
     }
 
-//    private void addArchieve(ArchieveInfo info, LinearLayout archievesLayout){
-//        LinearLayout layout = new LinearLayout(getContext());
-//        layout.setOrientation(LinearLayout.VERTICAL);
-//        ImageView gImg = new ImageView(getContext());
-//        gImg.setAdjustViewBounds(true);
-//        gImg.setMaxHeight(200);
-//        gImg.setMinimumHeight(200);
-//        gImg.setImageResource(info.getId());
-//        layout.addView(gImg);
-//        TextView name = new TextView(getContext());
-//        name.setText(info.getName());
-//        layout.addView(name);
-//        archievesLayout.addView(layout);
-//    }
 
     private List<ArchieveInfo> getArchieves()  {
         try {

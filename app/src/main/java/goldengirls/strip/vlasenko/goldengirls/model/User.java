@@ -17,6 +17,10 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getPhone() {
         return String.valueOf(id);
     }
@@ -40,6 +44,7 @@ public class User implements Serializable {
     public int getBalance() {
         return balance;
     }
+
     public void setBalance(int balance) {
         this.balance = balance;
     }

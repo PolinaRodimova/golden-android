@@ -27,7 +27,14 @@ public class MyHistoryArrayAdapter extends ArrayAdapter<HistoryAction> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         HistoryAction historyAction = values[position];
         View rowView = inflater.inflate(R.layout.one_history_view, parent, false);
-        ((ImageView) rowView.findViewById(R.id.history_action_img)).setImageResource(R.drawable.ic_menu_gallery);
+        int actionImg;
+        switch (historyAction.getType()){
+            case 1: actionImg = R.drawable.privat; break;
+            case 2: actionImg = R.drawable.en1; break;
+            case 3: actionImg = R.drawable.bar; break;
+            default: actionImg = R.drawable.gg_logo;
+        }
+        ((ImageView) rowView.findViewById(R.id.history_action_img)).setImageResource(actionImg);
         ((TextView) rowView.findViewById(R.id.history_action_text)).setText(historyAction.getText());
         ((TextView) rowView.findViewById(R.id.history_action_time)).setText(historyAction.getTime());
         return rowView;

@@ -35,7 +35,7 @@ public class QuestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         TableLayout view = new TableLayout(getContext());
-        int progress = getProgress();
+        int progress = 50;//getProgress();
         view.addView(createRow(inflater, container, R.drawable.privat2, "Закажи приват с двумя девушками", "В подарок ты получишь 500 Lucky Money", 100, View.INVISIBLE));
         view.addView(createRow(inflater, container,  progress < 100  ? R.drawable.bar : R.drawable.bar2, "Выпей коктейль в баре", "В подарок ты получишь вкусный десерт", progress, progress < 100 ? View.VISIBLE : View.INVISIBLE));
         view.addView(createRow(inflater, container, R.drawable.friend, "Пригласи друга", "Приведи друга и получи скидку 10% на бар", 0, View.INVISIBLE));

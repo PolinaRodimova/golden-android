@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.List;
 
 import goldengirls.strip.vlasenko.goldengirls.model.GirlsInfo;
+import goldengirls.strip.vlasenko.goldengirls.model.HistoryAction;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -84,18 +85,22 @@ public class GirlProfileFragment extends Fragment {
     private boolean sendAction() {
         try {
             ApiService apiService = HTTP_CLIENT.create(ApiService.class);
-            Call<Integer> call = apiService.registerAction("reserve_dance", CONTEXT.getUser().getPhone());
+            HistoryAction action = new HistoryAction(CONTEXT.getUser().getId(), "Приват с очаровательной " + CONTEXT.getGirl().getName(),
+                    ActionType.DANCE.getType());
+            Call<Integer> call = apiService.registerAction(action);
             Response<Integer> response = call.execute();
-
             if (response.code() == HttpURLConnection.HTTP_OK) {
                 AlertView.showSuccess(getContext());
                 return true;
-            } else {
-                AlertView.showError(getContext());
             }
         } catch (Exception e) {
-            AlertView.showError(getContext());
         }
+        AlertView.showMessage(getContext(), "Действие выполнено", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
         return false;
     }
 
