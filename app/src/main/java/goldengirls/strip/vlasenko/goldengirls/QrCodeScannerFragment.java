@@ -21,7 +21,7 @@ public class QrCodeScannerFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.qrcode_scanner, container, false);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item,
-                Arrays.asList("entry", "dance"));
+                Arrays.asList(ActionType.ENTRY.name(), ActionType.BAR.name(), ActionType.DANCE.name()));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         final Spinner spinner = (Spinner) view.findViewById(R.id.user_actions);
         spinner.setAdapter(adapter);
